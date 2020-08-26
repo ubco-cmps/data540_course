@@ -1,0 +1,21 @@
+DATA 540 Lecture 5 Answers
+--------------------------
+
+Slide #4 - SQL Programming Architecture Question
+
+Answer: B) false
+
+If the database has received a command, then the URL must have been correct to communicate with it.
+
+
+Slide #22 - SQL Programming: R and Python Question
+
+Answer: A) true
+
+The basic steps are the same.
+
+
+
+Slide #23 - R SQL Programming Question
+
+Answer: D) ODBC

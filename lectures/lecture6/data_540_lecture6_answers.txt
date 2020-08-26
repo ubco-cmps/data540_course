@@ -1,0 +1,60 @@
+DATA 540 Lecture 6 Answers
+--------------------------
+
+Slide #9 - Entities Question
+
+Answer: B) 1 Only #1 is true.
+
+
+Slide #14 - Relationship Question
+
+Answer: D) 3   True: 2, 3, 5
+
+Note: Recursive relationship has a degree of two.
+
+
+Slide #16 - Attribute Question
+
+Answer: D) True: 1, 2, 3
+
+
+Slide #25 - TPC-H ER Diagram Questions
+
+Answers:
+Q1: B) 6
+Q2: C) 6
+Q3: C) 6
+Q4: A) 4
+Q5: E) 0
+
+
+Slide #39 - ER to Relational Mapping Question
+
+Answer: A) Project  - Project.dno is a FK to Department.dno
+
+Project (pno, pname, budget, dno)
+
+
+Slide #48 - ER to Relational Mapping Question
+
+Answer: D) 3
+True statements:
+1) The M:N relationship mapping rule could be applied to 1:1 and 1:N relationships, as it is more general.
+2) A M:N relationship is mapped to a relation in the relational model.
+4) When mapping a multi-value attribute, the new table containing the multi-value attribute will have a composite key.
+
+
+Slide #49 - Convert ER to Relational Question
+
+Note: On test can underline primary key fields rather than using {PK} notation.
+
+Student(id {PK}, name, sex, birthdate, GPA)				
+Course(number {PK}, name, deptname)									// Course.deptname is foreign key to Department.name
+Department(name {PK}, location)
+Professor(name {PK})
+Section(coursenum {PK}, sectionnum {PK})							// Section.coursenum is foreign key to Course.number
+EnrollsIn(studentid {PK}, coursenum {PK}, sectionnum {PK}, grade)	// EnrollsIn.studentid is foreign key to Student.id, (coursenum,sectionnum) is foreign key to (Section.coursenum, Section.sectionnum)
+Teaches(profname {PK}, coursenum {PK}, sectionnum {PK})				// Teaches.profname is foreign key to Professor.name, (coursenum,sectionnum) is foreign key to (Section.coursenum, Section.sectionnum)
+InDept(profname {PK}, deptname {PK})								// InDept.profname is foreign key to Professor.name, InDept.deptname is foreign key to Department.name
+
+

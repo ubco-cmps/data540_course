@@ -1,0 +1,89 @@
+DATA 540 Lecture 4 Answers
+--------------------------
+
+Slide #8 - GROUP BY Question
+
+Answer: C) 4
+
+
+Slide #9 - GROUP BY Question #2
+
+Answer: B) 7
+
+
+Slide #16 - SQL Querying with GROUP BY
+
+Answer: A (attribute in SELECT not in GROUP BY), C (same reason but no GROUP BY)
+
+Note that MySQL will allow both A and C as it does not follow the standard.
+
+Note: This is accepted in PostgreSQL as dname can be uniquely identified by dno which is in the GROUP BY.  Not accepted in SQL Server.
+
+SELECT dname
+   FROM   dept
+   GROUP BY dno
+
+   
+Slide #17 - GROUP BY Practice Questions
+
+1) SELECT MAX(salary) FROM emp
+
+2) SELECT MIN(budget) FROM proj
+
+3) SELECT dno, AVG(budget) FROM proj GROUP BY dno
+
+4) SELECT pname, SUM(hours) FROM proj P JOIN workson W ON W.pno = P.pno 
+GROUP BY pname
+
+5) SELECT ename, SUM(hours) FROM emp E JOIN workson W ON W.eno = E.eno 
+GROUP BY ename HAVING SUM(hours) > 30
+
+
+Slide #33 - Outer Join Question
+
+Answer: C) 8
+Note that if right outer join the answer would be A – 10.
+
+
+Slide #35 - SQL Querying with Subqueries
+
+Answer: A
+
+
+Slide #37 - Subquery Practice Questions
+
+1) 
+SELECT dname FROM dept 
+WHERE dno IN (SELECT dno FROM proj)
+
+2) 
+SELECT ename
+FROM emp
+WHERE eno NOT IN (SELECT eno FROM workson)
+
+Or correlated but not as efficient:
+
+SELECT ename FROM emp 
+WHERE NOT EXISTS(SELECT * FROM workson WHERE emp.eno = workson.eno);
+
+3) SELECT ename FROM emp 
+WHERE title = 'EE' and salary > ALL (SELECT salary FROM emp WHERE title = 'PR');
+
+OR: 
+SELECT ename FROM emp 
+WHERE title = 'EE' and salary > (SELECT MAX(salary) FROM emp WHERE title = 'PR');
+Note: SUM(salary) will work for this data set as only one record with title = 'PR' but not in general.
+
+OR: (unique solution using HAVING)
+SELECT eno, ename
+FROM emp
+WHERE title = 'EE'
+GROUP BY eno, ename
+HAVING AVG(salary) > ALL (SELECT salary FROM emp WHERE title = 'PR')
+ 
+4) 
+SELECT ename FROM emp WHERE eno IN 
+	(SELECT eno FROM workson WHERE pno IN
+		(SELECT pno FROM workson WHERE eno =
+			(SELECT eno FROM emp WHERE ename = 'J. Doe')));
+

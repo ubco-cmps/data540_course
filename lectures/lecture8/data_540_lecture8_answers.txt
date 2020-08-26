@@ -1,0 +1,82 @@
+DATA 540 Lecture 8 Answers
+--------------------------
+
+Slide #7 - Views Practice Questions
+
+1) CREATE VIEW staff 
+	AS SELECT * FROM emp WHERE title = 'EE';
+
+2) CREATE VIEW staffedProjects
+	AS SELECT DISTINCT P.pno, pname, budget, dno 
+	FROM proj P, workson W WHERE P.pno = W.pno;
+
+OR CREATE VIEW staffedProjects
+	AS SELECT * FROM proj P WHERE P.pno IN 
+		(SELECT pno FROM worksOn W);
+
+3) CREATE VIEW managers
+	AS SELECT DISTINCT M.eno, M.ename, M.bdate, M.title, 
+		M.salary, M.supereno, M.dno
+	FROM Emp E, Emp M
+	WHERE E.supereno = M.eno;
+
+4) CREATE VIEW deptSal
+	AS SELECT dno, dname, AVG(salary) FROM Emp E, Dept D
+	WHERE E.dno = D.dno GROUP BY dno, dname;
+
+5) CREATE VIEW empList
+	AS SELECT eno, ename, title FROM emp;
+
+6) CREATE VIEW empE1
+	AS SELECT * FROM Emp E, WorksOn W
+	WHERE W.eno = E.eno and E.eno = 'E1';
+	
+
+Slide #14 - Required Privileges Question
+
+Answer:	E
+
+
+Slide #15 - Required Privileges Question #2
+
+Answer:	A
+
+
+Slide #16 - GRANT Question
+
+Answer:	B
+
+
+Slide #17 - GRANT Question #2
+
+Answer:	A
+
+
+Slide #21 - REVOKE Question
+
+Answer:	B
+
+Since RESTRICT, user B already granted privileges so error is given to user A on REVOKE.
+
+
+Slide #22 - Security Practice Questions
+
+1) GRANT SELECT ON Dept TO PUBLIC;
+
+2) GRANT SELECT, UPDATE(salary) ON Emp TO Accounting;
+
+3) CREATE VIEW empD2 AS SELECT * FROM Emp WHERE dno = 'D2';
+GRANT ALL PRIVILEGES ON empD2 TO Davis WITH GRANT OPTION;
+
+4) CREATE VIEW empSmith AS SELECT * FROM Emp E, WorksOn W
+WHERE E.eno = W.eno and E.eno = 'E3';
+GRANT SELECT ON empSmith TO Smith;
+
+5)
+REVOKE ALL PRIVILEGES ON empD2 FROM Davis;
+GRANT SELECT ON empD2 TO Davis;
+
+
+Slide #26 - ACID Properties
+
+Answer: C 	Isolation
