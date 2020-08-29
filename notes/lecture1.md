@@ -195,4 +195,188 @@ Terminology:
 
 <STAR SLIDE ENDS>
   
-Claire you are at page 20/42
+### Relation Example
+<img src="../images/lecture1/relationexample.png" alt="relationexample" width="800" >
+
+### Relation Practice Questions
+<img src="../images/lecture1/relationpractice.png" alt="relationpractice" width="600" >
+
+1) What is the name of the relation?  
+2) What is the cardinality of the relation?  
+3) What is the degree of the relation?  
+4) What is the domain of `resp`? What is the domain of `hours`?  
+
+### Database Definition Question
+
+**Question**:  
+How many of the following statements are **TRUE**?  
+1) A database is data.  
+2) A database system is software.  
+3) A database system will lose the data stored when the power is turned off.  
+4) Usually, more than one user can use a database system at a time.  
+5) The cardinality is the number of rows in a relation.  
+6) A relation's cardinality is always bigger than its degree.  
+A)1 B)2 C)3 D)4 E)5
+
+
+### Database Definition Matching Question
+**Question**: Given the three definitions, select the ordering that contains their related definitions.  
+1) relation  
+2) tuple  
+3) attribute  
+
+A) column, row, table  
+B) row, column, table    
+C) table, row, column  
+D) table, column, row  
+
+
+### Cardinality and Degree Question
+**Question**: A database table has 5rows and 10 columns. Select **one** true statement.
+
+A) The table's degree is 50.  
+B) The table's cardinality is 5.  
+C) The table's degree is 5.  
+D) The table's cardinality is 10.  
+
+
+### Relation Properties
+1) No two relations have the same name.  
+2) Each attribute of a relation has a distinct name.  
+3) Each tuple is distinct. There are no duplicate tuples.  
+4) The order of attributes is not important.  
+5) The order of tuples has no significance.  
+
+<STAR SLIDE STARTS>
+  
+### Relational Keys
+Keys are used to uniquely identify a tuple in a relation.  
+- **Note that keys apply to the schema not to the data. That is, looking at the current data cannot tell you for sure if the set of attributes is a key.**
+
+A *superkey* is a set of attributes that uniquely identifies a tuple in a relation.
+
+A *(candidate) key* is a minimalset of attributes that uniquely identifies a tuple in a relation.
+- **There may be more than 1candidate key for a relation with different # of attributes.**
+
+A *primary key* is the candidate key designated as the distinguishing key of a relation.
+
+A *foreign key* is a set of attributes in one relation referring to the primary key of a relation.
+- **Foreign keys enforce referential integrity. Note: A FK may refer to its own relation.**
+
+<STAR SLIDE ENDS>
+  
+
+### Keys and Superkeys Question
+**Question:**
+*True or false*: A key is always a superkey.  
+A) true  
+B) false  
+
+### Keys and Superkeys Question (2)
+**Question:**
+*True or false*:It is possible to have more than one key for a table and the keys may have different numbers of attributes.  
+A) true  
+B) false  
+
+### Keys and Superkeys Question (3)
+**Question:**  
+*True or false*:It is possible to always determine if a field is a key by looking at the data in the table.  
+A) true  
+B) false  
+
+### Example Relational Data Questions
+
+<img src="../images/lecture1/emprelation.png" alt="emprelation" width="300" > <img src="../images/lecture1/workson.png" alt="workson" width="300" >
+<img src="../images/lecture1/proj.png" alt="proj" width="300" >
+
+Questions:  
+1) Is enamea key for emp?  
+2) Is enoa key for WorksOn?  
+3) List all the superkeys for WorksOn.  
+
+<STAR SLIDE STARTS>
+  
+### Relational Integrity
+Integrity rules are used to insure the data is accurate.
+
+**Constraints** are rules or restrictions that apply to the database and limit the data values it may store.
+
+Types of constraints:
+- **Domain constraint** - Every value for an attribute must be an element of the attribute's domain or be `null`.
+  - `null` represents a value that is currently unknown or not applicable.
+  - `null` is not the same as zero or an empty string.
+- **Entity integrity constraint** - No attribute of a primary key can be null.
+- **Referential integrity constraint** - If a foreign key exists in a relation, then the foreign key value must match a primary key value of a tuple in the referenced relation or be null.
+
+<STAR SLIDE ENDS>
+
+
+### Foreign Keys Example
+<img src="../images/lecture1/foreignkey1.png" alt="foreignkey1" width="800" >
+
+### Foreign Keys Example (2)
+<img src="../images/lecture1/foreignkey2.png" alt="foreignkey2" width="800" >
+
+### Integrity Constraints Question
+**Question**: What constraint says that a primary key field cannot be null?  
+A) domain constraint  
+B) referential integrity constraint  
+C) entity integrity constraint  
+
+
+### Entity Integrity Constraint Question
+**Question**: A primary key has three fields. Only one field is null. Is the entity integrity constraint violated?  
+A) Yes  
+B) No  
+
+### Referential Integrity Constraint Question
+**Question**: A foreign key has a nullvalue in the tablethat contains the foreign key fields. Is the referential integrity constraint violated?  
+A) Yes  
+B) No  
+
+### Integrity Questions
+<img src="../images/lecture1/emprelation.png" alt="emprelation" width="300" > <img src="../images/lecture1/workson.png" alt="workson" width="300" >
+<img src="../images/lecture1/proj.png" alt="proj" width="300" >
+
+Question: How many rows have violations of integrity constraints? Note: salary, budget, dur are number fields.  
+A) 8 B) 9 C) 10 D) 11 E) 12
+
+### Relational Algebra Query Language
+A *query language* is used to update and retrieve data that is stored in a data model.
+
+*Relational algebra* is a set of relational operations for retrieving data.
+- **Just like algebra with numbers, relational algebra consists of operands (which are relations) and a set of operators.**
+
+Every relational operator takes as input one or more relations and produces a relation as output.
+
+A sequence of relational algebra operators is called a *relational algebra expression*.
+
+Relational algebra is the foundation of all relational database systems. SQL gets translated into relational algebra.
+
+
+### Conclusion
+A *database* is a collection of logically related data managed by a *database management system* (DBMS).
+- **Provides data independence and abstraction**
+- **Data definition and manipulation languages (DDL and DML)**
+
+The *relational model* represents data as relations which are sets of tuples. Each relational schema is a set of attributes with domains.
+
+The relational model has *constraints* to guarantee data integrity including: domain, entity integrity and referential integrity constraints. *Keys* are used to uniquely identify tuples in relations.
+
+*Relational algebra* is a set of operations for answering queries on data stored in the relational model.
+
+
+### Objectives
+- Define: database, DBMS, schema, metadata
+- Define program-data independence/data abstraction and explain how it is achieved by databases but not by file systems.
+- Define: relation, attribute, tuple, domain, degree, cardinality
+- Define DDL and DML. What is the difference?
+- List the properties of relations.
+- Define: superkey, key, candidate key, primary key, foreign key
+- Define: integrity, constraints, domain constraint, entity integrity constraint, referential integrity constraint
+- Given a relation be able to:
+  - identify its cardinality, degree, domains, keys, and superkeys
+  - determine if constraints are being violated
+- Define: relational algebra, query language
+
+
