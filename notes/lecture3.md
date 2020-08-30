@@ -83,7 +83,7 @@ SELECT DISTINCTtitle
 FROMemp
 ```
 
-<img src="../images/lecture3/result.png" alt="result" width="200" >
+<img src="../images/lecture3/results.png" alt="results" width="80" >
 
 
 ### DISTINCTQuestion
@@ -95,7 +95,7 @@ FROM R
 How many rows are returned?  
 A)1 B)3 C)4 D)6  
 
-<img src="../images/lecture3/rtable.png" alt="rtable" width="400" >
+<img src="../images/lecture3/rtable.png" alt="rtable" width="200" >
 
 
 ### Try it: SQL SELECTand Projection
@@ -115,7 +115,7 @@ FROM proj
 WHERE dno = 'D2'
 ```
 
-<img src="../images/lecture3/proj.png" alt="proj" width="400" >
+<img src="../images/lecture3/proj.png" alt="proj" width="600" >
 
 Algorithm: Scan each tuple and check if matches condition in `WHERE` clause.
 
@@ -161,7 +161,7 @@ A)0 B)1 C)2 D)3
 
 ### Joins for Combining Tables
 A join combines two tables by matching columns in each table.
-<img src="../images/lecture3/join.png" alt="join" width="700" >
+<img src="../images/lecture3/join.PNG" alt="join" width="700" >
 
 ### Join Details and Examples
 Listing multiple tables in the `FROM` clauseseparated by commas creates a cross product of tables. Must specify JOINand ONor provide join condition in WHEREclause.
@@ -173,7 +173,7 @@ Listing multiple tables in the `FROM` clauseseparated by commas creates a cross 
 You can use join, selection, and projection in the same query.
 - Recall: Projection returns columns listed in `SELECT`, selection filters out rows using condition in `WHERE`, and join combines tables in `FROM` using a condition.
 Example: Return the employee names who are assigned to the 'Management' department.
-<img src="../images/lecture3/join3.png" alt="join3" width="600" >
+<img src="../images/lecture3/join3.PNG" alt="join3" width="700" >
 
 ### Three Table Join Query Example
 Return all projects who have an employee working on them whose title is 'EE':
