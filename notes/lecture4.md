@@ -82,5 +82,49 @@ GROUP BY resp, pno
 How many rows are returned?
 A)9 B)7 C)5 D)1 E)0
 
-CLAIRE YOU ARE AT PAGE 10!
+
+### HAVING Clause
+The **HAVING** clause is applied *AFTER* the `GROUP BY` clause and aggregate functions are calculated.
+
+It is used to filter out entire groupsthat do not match certain criteria.
+
+The **HAVING** clause can contain any condition that references aggregate functions and the group by attributes themselves.
+- **However, any conditions on the `GROUP BY` attributes should be specified in the `WHERE` clause if possible due to performance reasons.**
+
+### HAVING Example
+Return the title and number of employees of that title where the number of employees of the title is at least 2.
+```
+SELECT title, COUNT(eno) AS numEmp
+FROM emp
+GROUP BY title
+HAVING COUNT(eno) >= 2
+```
+<img src="../images/lecture4/results3.png alt="results" width="300" >
+
+### GROUP BY/HAVING Example
+For employees born after December 1, 1965, return the average salary by department where the average is > 40,000.
+```
+SELECTd name, AVG(salary) AS avgSal
+FROM emp JOIN dept ON emp.dno = dept.dno
+WHERE emp.bdate > DATE '1965-12-01'
+GROUP BY dname
+HAVING AVG(salary) > 40000
+```
+Step #1: Perform `Join` and Filter in `WHERE` clause
+
+<img src="../images/lecture4/step1.png alt="step1" width="700" >
+
+Step #2: `GROUP BY` on dname
+
+<img src="../images/lecture4/step1.png alt="step1" width="700" >
+                                                              
+Step #3: Calculate aggregate functions
+
+<img src="../images/lecture4/step3.png alt="step3" width="300" >
+
+Step #4: Filter groups using `HAVING` clause
+
+<img src="../images/lecture4/step4.png alt="step4" width="300" >
+
+
 
