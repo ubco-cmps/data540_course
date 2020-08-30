@@ -119,5 +119,66 @@ WHERE dno = 'D2'
 
 Algorithm: Scan each tuple and check if matches condition in `WHERE` clause.
 
-YOU ARE AT PAGE 12 CLAIRE!
+### Selection Conditions
+The condition in a selection statement specifies which rows are included. It has the general form of an if statement.
+
+The condition may consist of attributes, constants, comparison operators (<, >, =, !=, <=, >=), andlogical operators (AND, OR, NOT).
+
+
+### SQL Selection Examples
+<img src="../images/lecture3/selection.png" alt="selection" width="700" >
+
+### Selection Question
+**Question**: Given this table and the query:
+```
+SELECT*
+FROMemp
+WHEREtitle='SA'
+```
+<img src="../images/lecture3/relation.png" alt="relation" width="400" >
+How many rows are returned?
+A)0 B)1 C)2 D)3
+
+### Selection Question #2
+**Question**: Given this table and the query:
+```
+SELECT*
+FROMemp
+WHEREsalary > 50000 or title='PR'
+```
+<img src="../images/lecture3/table.png" alt="table" width="400" >
+How many rows are returned?
+A)0 B)1 C)2 D)3
+
+### Try it: SQL SELECTand Filtering Rows
+**Question**: Write these queries:
+1) Return all projects with budget >$250000.
+2) Show the pnoand pnamefor projects in dno = 'D1'.
+3) Show pnoand dnofor projects in dno='D1'or dno='D2'.
+4) Return the employee numbers who make less than $30000.
+5) Return list of worksonresponsibilities (resp) with no duplicates.
+6) Return the employee (names) born after July 1, 1970 that have a salary > 35000 and have a title of 'SA'or 'PR'.
+
+### Joins for Combining Tables
+A join combines two tables by matching columns in each table.
+<img src="../images/lecture3/join.png" alt="join" width="700" >
+
+### Join Details and Examples
+Listing multiple tables in the `FROM` clauseseparated by commas creates a cross product of tables. Must specify JOINand ONor provide join condition in WHEREclause.
+
+**Goal**: For each employee, return their name and department name.
+<img src="../images/lecture3/join2.png" alt="join2" width="700" >
+
+### Join Query with Selection Example
+You can use join, selection, and projection in the same query.
+- Recall: Projection returns columns listed in `SELECT`, selection filters out rows using condition in `WHERE`, and join combines tables in `FROM` using a condition.
+Example: Return the employee names who are assigned to the 'Management' department.
+<img src="../images/lecture3/join3.png" alt="join3" width="600" >
+
+CLAIRE YOU ARE AT PAGE 20
+
+
+
+
+
 
