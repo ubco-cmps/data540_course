@@ -337,7 +337,7 @@ A) 0 B) 1 C) 2 D) 3 E) 4
 
 ### Connecting to MySQL – Command Line (2)
 
-<img src="../images/lecture2/mySQL.png" alt="mySQL" width="500" >
+<img src="../images/lecture2/mySQL.png" alt="mySQL" width="600" >
 
 ### Connecting to MySQL – GUI using SQuirreL
 1) SQuirreLSQL is a GUI for SQL querying of multiple databases.  
