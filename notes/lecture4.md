@@ -116,7 +116,7 @@ Step #1: Perform `Join` and Filter in `WHERE` clause
 
 Step #2: `GROUP BY` on dname
 
-<img src="../images/lecture4/step1.png alt="step1" width="700" >
+<img src="../images/lecture4/step2.png alt="step2" width="700" >
                                                               
 Step #3: Calculate aggregate functions
 
