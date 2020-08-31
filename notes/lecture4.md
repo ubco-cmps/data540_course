@@ -431,14 +431,14 @@ WHERE salary * 2 > 60000
 <STAR SLIDE STARTS>
   
 ### SQL Queries using SELECT
-A query in SQL has the form:
-**SELECT** (list of columns or expressions)
-**FROM** (list of tables)
-**WHERE** (filter conditions)
-**GROUP BY** (columns)
-**HAVING** (group filter conditions)
-**ORDER BY** (columns)
-**LIMIT** (count) **OFFSET** (start)
+A query in SQL has the form:  
+**SELECT** (list of columns or expressions)  
+**FROM** (list of tables)  
+**WHERE** (filter conditions)  
+**GROUP BY** (columns)  
+**HAVING** (group filter conditions)  
+**ORDER BY** (columns)  
+**LIMIT** (count) **OFFSET** (start)  
 
 <STAR SLIDE ENDS>
   
