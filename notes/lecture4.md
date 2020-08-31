@@ -48,7 +48,7 @@ MAX(salary) as maxSal, AVG(salary) AS avgSal
 FROM emp
 GROUP BY title
 ```
-<img src="../images/lecture4/results2.png alt="results2" width="400" >
+<img src="../images/lecture4/results2.png" alt="results2" width="400" >
 
 
 ### GROUP BYClause Rules
@@ -66,7 +66,8 @@ SELECT title, SUM(salary)
 FROM emp
 GROUP BY title
 ```
-<img src="../images/lecture4/empralation.png alt="emprelation" width="400" >
+<img src="../images/lecture4/emprelation.png" alt="emprelation" width="400" >
+                                                                          
 How many rows are returned?
 A)1 B)2 C)4 D)8
 
@@ -78,7 +79,8 @@ FROM workson
 WHERE hours > 10
 GROUP BY resp, pno
 ```
-<img src="../images/lecture4/workson.png alt="workson" width="400" >
+<img src="../images/lecture4/workson.png" alt="workson" width="400" >
+                                                                  
 How many rows are returned?
 A)9 B)7 C)5 D)1 E)0
 
@@ -99,7 +101,7 @@ FROM emp
 GROUP BY title
 HAVING COUNT(eno) >= 2
 ```
-<img src="../images/lecture4/results3.png alt="results" width="300" >
+<img src="../images/lecture4/results3.png" alt="results3" width="300" >
 
 ### GROUP BY/HAVING Example
 For employees born after December 1, 1965, return the average salary by department where the average is > 40,000.
@@ -112,19 +114,19 @@ HAVING AVG(salary) > 40000
 ```
 Step #1: Perform `Join` and Filter in `WHERE` clause
 
-<img src="../images/lecture4/step1.png alt="step1" width="700" >
+<img src="../images/lecture4/step1.png" alt="step1" width="700" >
 
 Step #2: `GROUP BY` on dname
 
-<img src="../images/lecture4/step2.png alt="step2" width="700" >
+<img src="../images/lecture4/step2.png" alt="step2" width="700" >
                                                               
 Step #3: Calculate aggregate functions
 
-<img src="../images/lecture4/step3.png alt="step3" width="300" >
+<img src="../images/lecture4/step3.png" alt="step3" width="400" >
 
 Step #4: Filter groups using `HAVING` clause
 
-<img src="../images/lecture4/step4.png alt="step4" width="300" >
+<img src="../images/lecture4/step4.png" alt="step4" width="400" >
 
 
 ### GROUP BY Examples
@@ -157,11 +159,11 @@ HAVING SUM (hours) >= 10
 Question:
 1) How would you only return records for departments D2 and D3?
 
-<img src="../images/lecture4/results4.png alt="results4" width="300" >
+<img src="../images/lecture4/results4.png" alt="results4" width="400" >
 
 ### SQL Querying with GROUP BY
 
-**Question**: Of the following queries, select one which is **invalid**.
+**Question**: Of the following queries, select one which is **invalid**.  
 A)
 ```
 SELECT dname
@@ -338,23 +340,25 @@ FROM dept NATURAL LEFT JOIN proj
 ```
 
 ### Equijoin Example
-<img src="../images/lecture4/equijoin.png alt="equijoin" width="700" >
+<img src="../images/lecture4/equijoin.png" alt="equijoin" width="700" >
 
 ### Natural Join Example
-<img src="../images/lecture4/naturaljoin.png alt="naturaljoin" width="700" >
+<img src="../images/lecture4/naturaljoin.png" alt="naturaljoin" width="700" >
                                                                  
 ### Right Outer Join Example
-<img src="../images/lecture4/rightouter.png alt="rightouter" width="700" >
+<img src="../images/lecture4/rightouter.png" alt="rightouter" width="700" >
 
 ### Outer Join Question
 **Question**: Given this table and the query:
-<img src="../images/lecture4/outerq.png alt="outerq" width="700" >
+
+<img src="../images/lecture4/outerq.png" alt="outerq" width="350" >
+
 ```
 SELECT*
 FROM workson LEFT OUTER JOIN proj P
 ON workson.pno = proj.pno
 ```                                                                
-How many rows are returned?
+How many rows are returned?  
 A)10  
 B) 9  
 C) 8  
