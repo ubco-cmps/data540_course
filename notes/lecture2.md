@@ -57,10 +57,23 @@ C) `test_!`
 D) `field_`  
 E) `from`  
 
+<START SOLUTIONS HERE>
+  
+Answer: D) field_
+  
+<END SOLUTIONS HERE>  
+  
+
 ### Delimited Database Identifiers
 **Question**: *True or False*: "from"can be used as a valid identifier according to the SQL standard.
 A) True  
 B) False  
+
+<START SOLUTIONS HERE>
+  
+Answer: A (true)  This is a delimited identifier that allows using reserved words, special symbols, and spaces.
+  
+<END SOLUTIONS HERE>  
 
 ### SQL Data Types
 In the relational model, each attribute has an associated domain of values.
@@ -171,6 +184,16 @@ B) `ON UPDATE CASCADE` will modify all rows in the primary key table when a valu
 C) `SET DEFAULT` cannot be used for the `workson.eno` foreign key. (Assume a default value was specified for enofield).  
 D) If a primary key row is deleted and it is referenced by a foreign key row, `NO ACTION` will generate an error to the user.
 
+<START SOLUTIONS HERE>
+  
+Answer: D (but also accept C)
+
+Technically SET DEFAULT can be used, but its meaning may be strange (as assigning hours to someone else).  SET NULL cannot be used as eno is a primary key field.  ON UPDATE CASCADE modifies FK rows on a PK row change.
+
+Note: SET DEFAULT technically would not work with current WorksOn definition as we did not set a default value for WorksOn.eno in its table creation.  However, if no default is specified, in PostgreSQL at least, it defaults to NULL. That would be an issue as eno is a primary key. Even if there was a value, it could trigger a PK issue if the default employee number used is already working on the project.
+
+<END SOLUTIONS HERE>  
+  
 <STAR SLIDE STARTS>
 ### SQL CREATE TABLEFull Syntax
 Full syntax of `CREATE TABLE` statement:
@@ -192,13 +215,13 @@ CREATE TABLEtableName (
 ### Creating the Example Database
 ```
     CREATE TABLE emp(
-    enoCHAR(5),
-    enameVARCHAR(30) NOT NULL,
-    bdateDATE,
-    titleCHAR(2),
-    salaryCHAR(5),
-    superenoCHAR(5),
-    dnoCHAR(5),
+    eno CHAR(5),
+    ename VARCHAR(30) NOT NULL,
+    bdate DATE,
+    title CHAR(2),
+    salary CHAR(5),
+    supereno CHAR(5),
+    dno CHAR(5),
     PRIMARY KEY (eno),
     FOREIGN KEY (supereno) REFERENCES emp(eno)
     ON DELETE SET NULL ON UPDATE CASCADE,
@@ -209,11 +232,11 @@ CREATE TABLEtableName (
 
 ### Creating the Example Database (2)
 ```
-    CREATETABLEworkson(
-    enoCHAR(5),
-    pnoCHAR(5),
-    respVARCHAR(20),
-    hoursSMALLINT,
+    CREATE TABLE workson(
+    eno CHAR(5),
+    pno CHAR(5),
+    resp VARCHAR(20),
+    hours SMALLINT,
     PRIMARYKEY (eno,pno),
     FOREIGN KEY (eno) REFERENCES emp(eno)
     ON DELETE NO ACTION ON UPDATE CASCADE,
@@ -222,11 +245,34 @@ CREATE TABLEtableName (
     );
 ```
 
-Question:
+Question:  
 Write `CREATE TABLE` statements to build the `proj` and `dept` relations:
 - `dept(dno, dname, mgreno)`
 - `proj(pno, pname, budget, dno)`
 
+<START SOLUTIONS HERE>
+  
+CREATE TABLE dept (
+   dno 		CHAR(5),
+   dname	VARCHAR(40),
+   mgreno	CHAR(5),
+   PRIMARY KEY (dno)
+   FOREIGN KEY (mgreno) REFERENCES emp(eno) 
+      ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+CREATE TABLE proj (
+   pno		CHAR(5),
+   pname	VARCHAR(40),
+   budget   DECIMAL(10,2),
+   dno		CHAR(5),
+   PRIMARY KEY (pno),
+   FOREIGN KEY (dno) REFERENCES dept(dno) 
+     ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+<END SOLUTIONS HERE>
+  
 
 ### Creating Schemas
 A **schema** is a collection of database objects (tables, views, domains, etc.) usually associated with a single user.
@@ -297,7 +343,7 @@ ON tableName (colName [ASC|DESC] [,...])
 DROP INDEXindexName;
 ```
 
-- **UNIQUEmeans that each value in the index is unique.**
+- **UNIQUE means that each value in the index is unique.**
 - **ASC/DESCspecifies the sorted order of index.**
 
 
@@ -323,7 +369,13 @@ CREATE UNIQUE INDEX idxPK ONworkson(eno,pno);
 4) A table will not be dropped (with `DROP TABLE`) if it contains data.  
 A) 0 B) 1 C) 2 D) 3 E) 4  
 
+<START SOLUTIONS HERE>
 
+Answer: B
+True statement:
+1) Each field in the CREATE TABLE statement is separated by a comma.
+  
+<END SOLUTIONS HERE>
 
 ### Connecting to MySQL –Command Line
 1) Use a SSH software (e.g. PuTTY) to connect to `cosc304.ok.ubc.ca`.
@@ -358,6 +410,17 @@ Download at: http://squirrel-sql.sourceforge.net/
 - `amount`–that stores a decimal number with 8 total digits and 2 decimal digits (`decimal` data type)
 
 Connect to the sample MySQL database or use the web site sqlfiddle.com to try your table creation.
+
+
+<START SOLUTIONS HERE>
+
+create table mydata (
+  num int,
+  message varchar(50),
+  amount decimal(8,2)
+ );
+  
+<END SOLUTIONS HERE>
 
 <STAR SLIDE STARTS>
 
@@ -413,6 +476,14 @@ WHERE title = 'EE'
 
 Connect to the sample MySQL database or use the web site sqlfiddle.com to try.
 
+<START SOLUTIONS HERE>
+
+insert into mydata values (1, 'Hello', 99.45);
+insert into mydata values (2, 'Goodbye', 55.99);
+insert into mydata (num, message) values (3, 'No Amount');
+  
+<END SOLUTIONS HERE>
+
 <STAR SLIDE STARTS>
 
 ### UPDATE Statement
@@ -439,6 +510,16 @@ Notes:
 - **Update the messagefield to 'Changed'for the record with num = 2.**
 Connect to the sample MySQL database or use the web site sqlfiddle.com to try.
 
+<START SOLUTIONS HERE>
+  
+UPDATE mydata SET amount = 99.99
+
+UPDATE mydata SET num=10 WHERE num = 1
+
+UPDATE mydata SET message = 'Changed' WHERE num = 2
+  
+<END SOLUTIONS HERE>
+
 <STAR SLIDE STARTS>
 ### DELETE Statement
 Rows are deleted using the `DELETE` statement. Examples:
@@ -461,6 +542,15 @@ WHERE salary > 35000;
 - **Delete all rows.**
 Connect to the sample MySQL database or use the web site sqlfiddle.com to try your DELETE statements.
 
+<START SOLUTIONS HERE>
+  
+DELETE FROM mydata WHERE num = 1
+
+DELETE FROM mydata WHERE message > 'C'
+
+DELETE FROM mydata
+  
+<END SOLUTIONS HERE>
 
 ### INSERT Question
 **Question**: How many of the following statements are **TRUE**?  
@@ -469,6 +559,12 @@ Connect to the sample MySQL database or use the web site sqlfiddle.com to try yo
 3) If you do not provide a value for a number field, it will default to 1.  
 4) Number data items are enclosed in single quotes.  
 A) 0 B) 1 C) 2 D) 3 E) 4  
+
+<START SOLUTIONS HERE>
+  
+Answer: A (no true statements)
+  
+<END SOLUTIONS HERE>
 
 
 ### UPDATE Question
@@ -479,6 +575,13 @@ A) 0 B) 1 C) 2 D) 3 E) 4
 4) `UPDATE` may change more than one data value (column) in a row.  
 A) 0 B) 1 C) 2 D) 3 E) 4
 
+<START SOLUTIONS HERE>
+  
+Answer: E (all true statements)
+  
+<END SOLUTIONS HERE>
+
+
 ### DELETE Question
 **Question**: How many of the following statements are **TRUE**?
 1) A `DELETE` with no `WHERE` clause will delete all rows.
@@ -487,6 +590,15 @@ A) 0 B) 1 C) 2 D) 3 E) 4
 4) A `DELETE` statement may delete zero rows when executed.
 A) 0 B) 1 C) 2 D) 3 E) 4  
 
+<START SOLUTIONS HERE>
+  
+Answer: D 
+True statements:
+1) A DELETE with no WHERE clause will delete all rows.
+3) It is possible to DELETE zero or more rows using a WHERE clause.
+4) A DELETE statement may delete zero rows when executed.
+  
+<END SOLUTIONS HERE>
 
 ### Practice Questions
 ```
@@ -503,6 +615,24 @@ Relational database schema:
 5) Update all employees to give them a 20% pay cut.
 6) Update the projects for `dno`='D3'to increase their budget by 10%.
 
+
+<START SOLUTIONS HERE>
+  
+Answer:
+
+1) INSERT INTO dept (dno, dname, mgreno) VALUES ('D5', 'Useless' null);  OR: INSERT INTO dept (dno, dname) VALUES ('D5', 'Useless')
+2) INSERT INTO workson (eno, pno) VALUES ('E1', 'P3');
+3) DELETE FROM emp;
+4) DELETE FROM workson WHERE hours > 20;
+5) UPDATE emp SET salary=salary*0.8
+6) UPDATE proj SET budget = budget*1.1 WHERE dno='D3'
+
+Change FK constraints to execute DELETE FROM emp:
+ALTER TABLE dept DROP FOREIGN KEY FK_dept_emp;
+ALTER TABLE workson DROP FOREIGN KEY FK_workson_emp;
+
+  
+<END SOLUTIONS HERE>
 
 ### Conclusion
 *SQL* is the standard query language for databases.
