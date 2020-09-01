@@ -51,7 +51,7 @@ GROUP BY title
 <img src="../images/lecture4/results2.png" alt="results2" width="400" >
 
 
-### GROUP BYClause Rules
+### GROUP BY Clause Rules
 There are a few rules for using the `GROUP BY` clause:
 1) A column name cannot appear in the `SELECT` part of the query unless it is part of an aggregate function or in the list of group by attributes.
   - Note that the reverse is allowed: a column can be in the `GROUP BY` without being in the `SELECT` part.
@@ -71,6 +71,12 @@ GROUP BY title
 How many rows are returned?
 A)1 B)2 C)4 D)8
 
+<START SOLUTIONS HERE>
+
+Answer: C) 4
+  
+<END SOLUTIONS HERE>
+
 ### GROUP BY Question #2
 **Question**: Given this table and the query:
 ```
@@ -84,6 +90,11 @@ GROUP BY resp, pno
 How many rows are returned?
 A)9 B)7 C)5 D)1 E)0
 
+<START SOLUTIONS HERE>
+
+Answer: B) 7
+  
+<END SOLUTIONS HERE>
 
 ### HAVING Clause
 The **HAVING** clause is applied *AFTER* the `GROUP BY` clause and aggregate functions are calculated.
@@ -187,6 +198,21 @@ FROM dept WHERE mgreno > 'A'
 GROUP BY dno, dname
 ```
 
+<START SOLUTIONS HERE>
+
+Answer: A (attribute in SELECT not in GROUP BY), C (same reason but no GROUP BY)
+
+Note that MySQL will allow both A and C as it does not follow the standard.
+
+Note: This is accepted in PostgreSQL as dname can be uniquely identified by dno which is in the GROUP BY.  Not accepted in SQL Server.
+```
+SELECT dname  
+   FROM   dept  
+   GROUP BY dno  
+```
+  
+<END SOLUTIONS HERE>
+
 ### Try it: SQL GROUP BY Practice Questions
 **Question**: Write these queries:
 
@@ -195,6 +221,22 @@ GROUP BY dno, dname
 3) Return the department number and average budget for its projects.
 4) For each project, return its name and the total number of hours employees have worked on it.
 5) For each employee, return the total number of hours they have worked. Only show employees with more than 30 hours.
+
+<START SOLUTIONS HERE>
+
+1) SELECT MAX(salary) FROM emp
+
+2) SELECT MIN(budget) FROM proj
+
+3) SELECT dno, AVG(budget) FROM proj GROUP BY dno
+
+4) SELECT pname, SUM(hours) FROM proj P JOIN workson W ON W.pno = P.pno   
+GROUP BY pname
+
+5) SELECT ename, SUM(hours) FROM emp E JOIN workson W ON W.eno = E.eno   
+GROUP BY ename HAVING SUM(hours) > 30
+
+<END SOLUTIONS HERE>
 
 ### Subqueries
 SQL allows a single query to have multiple subqueries nested inside of it. This allows for more complex queries to be written.
@@ -363,8 +405,16 @@ A)10
 B) 9  
 C) 8  
 D) 7   
-                                                                
-### Subqueries in FROMClause
+     
+<START SOLUTIONS HERE>
+
+Answer: C) 8
+Note that if right outer join the answer would be A – 10.
+
+<END SOLUTIONS HERE>
+
+
+### Subqueries in FROM Clause
 Subqueries are used in the `FROM` clause to produce temporary table results for use in the current query.
 
 Example: Return the departments that have an employee that makes more than $40,000.                                                                
@@ -401,6 +451,11 @@ WHERE salary > (SELECT SUM(salary) FROM emp
 WHERE title = 'EE')
 ```
 
+<START SOLUTIONS HERE>
+  
+Answer: A
+
+<END SOLUTIONS HERE>
 
 ### SQL Functions
 Databases have many built-in functions that can be used when writing queries. Syntax and support varies between systems.
@@ -427,6 +482,52 @@ WHERE salary * 2 > 60000
 3) List the employees with title 'EE’ that make more than all employees with title 'PR'.
 4) Find all employees who work on some project that 'J. Doe' works on.
 
+<START SOLUTIONS HERE>
+
+1) 
+```
+SELECT dname FROM dept 
+WHERE dno IN (SELECT dno FROM proj)
+```
+2) 
+```
+SELECT ename
+FROM emp
+WHERE eno NOT IN (SELECT eno FROM workson)
+```
+Or correlated but not as efficient:
+```
+SELECT ename FROM emp 
+WHERE NOT EXISTS(SELECT * FROM workson WHERE emp.eno = workson.eno);
+```
+3) 
+```
+SELECT ename FROM emp 
+WHERE title = 'EE' and salary > ALL (SELECT salary FROM emp WHERE title = 'PR');
+```
+OR:
+```
+SELECT ename FROM emp 
+WHERE title = 'EE' and salary > (SELECT MAX(salary) FROM emp WHERE title = 'PR');
+```
+Note: SUM(salary) will work for this data set as only one record with title = 'PR' but not in general.
+
+OR: (unique solution using HAVING)
+```
+SELECT eno, ename
+FROM emp
+WHERE title = 'EE'
+GROUP BY eno, ename
+HAVING AVG(salary) > ALL (SELECT salary FROM emp WHERE title = 'PR')
+``` 
+4) 
+```
+SELECT ename FROM emp WHERE eno IN 
+	(SELECT eno FROM workson WHERE pno IN
+		(SELECT pno FROM workson WHERE eno =
+			(SELECT eno FROM emp WHERE ename = 'J. Doe')));
+```
+<END SOLUTIONS HERE>
 
 <STAR SLIDE STARTS>
   
