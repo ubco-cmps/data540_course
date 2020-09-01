@@ -51,6 +51,12 @@ A)0 B)1 C)2 D)3 E)4
 
 <img src="../images/lecture3/emp.png" alt="emp" width="400" >
 
+<START SOLUTIONS HERE>
+
+Answer: D) 3  
+  
+<END SOLUTIONS HERE>
+
 ### Projection Question #2
 **Question**: Given this table and the query:
 ```
@@ -65,6 +71,12 @@ D) 8
 
 <img src="../images/lecture3/emp.png" alt="emp" width="400" >
 
+<START SOLUTIONS HERE>
+
+Answer: D) 8
+  
+<END SOLUTIONS HERE>
+
 ### Duplicates in SQL
 One major difference between SQL and relational algebra is that relations in SQL are **bags** instead of sets.
 - It is possible to have two or more identical rows in a relation.
@@ -76,7 +88,7 @@ FROM emp
 
 <img src="../images/lecture3/duplicate.png" alt="duplicate" width="600" >
 
-### Duplicates in SQL -DISTINCTclause
+### Duplicates in SQL -DISTINCT clause
 To remove duplicates, use `DISTINCT` clause in the SQL statement:
 ```
 SELECT DISTINCTtitle
@@ -86,7 +98,7 @@ FROMemp
 <img src="../images/lecture3/results.png" alt="results" width="80" >
 
 
-### DISTINCTQuestion
+### DISTINCT Question
 **Question**: Given this table and the query:
 ```
 SELECTDISTINCT a, b
@@ -98,12 +110,30 @@ A)1 B)3 C)4 D)6
 <img src="../images/lecture3/rtable.png" alt="rtable" width="200" >
 
 
+<START SOLUTIONS HERE>
+
+Answer: C) 4 – Only a duplicate if values for both a and b are identical.
+  
+<END SOLUTIONS HERE>
+
 ### Try it: SQL SELECTand Projection
 **Question**: Using the `proj` table, write these three queries:  
 **1) Show all rows and all columns.**  
 **2) Show all rows but only the `pno` column.**  
 **3) Show all rows but only the `pno` and budget columns.**  
 **4) Show unique `budget` values.**  
+
+<START SOLUTIONS HERE>
+
+1) SELECT * FROM proj
+
+2) SELECT pno FROM proj
+
+3) SELECT pno, budget FROM proj
+
+4) SELECT DISTINCT budget FROM proj
+  
+<END SOLUTIONS HERE>
 
 ### Retrieving Only Some of the Rows
 The **selection operation** creates a new table with some of the rows of the input table. A condition specifies which rows are in the new table. The condition is similar to an ifstatement.
@@ -139,6 +169,12 @@ WHEREtitle='SA'
 How many rows are returned?
 A)0 B)1 C)2 D)3
 
+<START SOLUTIONS HERE>
+  
+Answer: D) 3
+  
+<END SOLUTIONS HERE>
+
 ### Selection Question #2
 **Question**: Given this table and the query:
 ```
@@ -150,6 +186,12 @@ WHEREsalary > 50000 or title='PR'
 How many rows are returned?
 A)0 B)1 C)2 D)3
 
+<START SOLUTIONS HERE>
+  
+Answer: B) 1
+  
+<END SOLUTIONS HERE>
+
 ### Try it: SQL SELECTand Filtering Rows
 **Question**: Write these queries:
 1) Return all projects with budget >$250000.
@@ -158,6 +200,24 @@ A)0 B)1 C)2 D)3
 4) Return the employee numbers who make less than $30000.
 5) Return list of worksonresponsibilities (resp) with no duplicates.
 6) Return the employee (names) born after July 1, 1970 that have a salary > 35000 and have a title of 'SA'or 'PR'.
+
+<START SOLUTIONS HERE>
+  
+1) SELECT * FROM proj WHERE budget > 250000
+
+2) SELECT pno, pname FROM proj WHERE dno = 'D1'
+
+3) SELECT pno, dno FROM proj WHERE dno = 'D1' or dno = 'D2'
+
+Note: SELECT pno, dno FROM proj WHERE dno = 'D1' or 'D2' will not generate an error but will not do what it is supposed to (it will show all rows).
+
+4) SELECT eno FROM emp where salary < 30000
+
+5) SELECT DISTINCT resp from workson
+
+6) SELECT ename FROM emp WHERE bdate > '1970-07-01' and salary > 35000 and (title = 'SA' or title = 'PR')   (parenthesis needed)
+  
+<END SOLUTIONS HERE>
 
 ### Joins for Combining Tables
 A join combines two tables by matching columns in each table.
@@ -207,6 +267,11 @@ FROM emp, workson, proj
 WHERE emp.eno = workson.eno and pno = "P3"
 ```
 
+<START SOLUTIONS HERE>
+  
+Answer: A
+  
+<END SOLUTIONS HERE>
 
 ### Ordering Result Data
 The query result returned is not ordered on any column by default. We can order the data using the `ORDER BY` clause:
@@ -245,6 +310,26 @@ LIMIT 3 OFFSET 2
 5) Return worksonrecords (eno, pno, resp, hours) where project budgetis > $50000 and hours worked is < 20.
 6) Challenge:Return a list of all department names, the names of the projects of that department, and the name of the manager of each department.
 
+<STAR SOLUTIONS HERE>
+  
+1) SELECT * FROM proj WHERE budget < 500000 ORDER BY budget DESC
+
+2) SELECT ename, salary FROM emp ORDER BY salary DESC LIMIT 5
+
+3) SELECT pno, proj.dno, pname, dname FROM proj JOIN dept ON proj.dno=dept.dno WHERE dname > 'D' ORDER BY proj.dno, proj.pno
+
+Note: Watch out that need a prefix (either proj or dept) on the dno field.
+
+4) SELECT pname FROM dept, proj WHERE dept.dno = proj.dno AND dname = 'Consulting'  
+OR:  
+SELECT pname FROM dept JOIN proj ON dept.dno = proj.dno WHERE dname = 'Consulting'  
+
+5) SELECT eno, workson.pno, resp, hours FROM workson JOIN proj ON workson.pno = proj.pno WHERE budget > 50000 and hours < 20
+
+6) SELECT dname, pname, ename FROM dept JOIN proj ON dept.dno = proj.dno JOIN emp ON mgreno = eno
+
+<END SOLUTIONS HERE>
+  
 
 ### Calculated Fields
 Expressions are allowed in SELECTclause to perform calculations.
@@ -384,6 +469,11 @@ Two tables have the same number of fields in the same order with the same types,
 A) true  
 B) false  
 
+<START SOLUTIONS HERE>
+  
+Answer: A – true (field order, number, and types matter not the names)
+
+<END SOLUTIONS HERE>
 
 ### SELECT INTO
 The result of a select statement can be stored in a temporary table using the **INTO** keyword.
@@ -394,7 +484,7 @@ FROM emp as E JOIN emp as M ON E.supereno = M.eno
 WHERE M.ename = 'R. Davis'
 ```
 
-### SQL Querying with NULLand LIKE
+### SQL Querying with NULL and LIKE
 **Question**: What query would return the department names that do not have a manager or contain 'ent'.
 A) 
 ```
@@ -419,6 +509,25 @@ Write these queries:
 4) Return the list of employees (names) who make less than their managers and how much less they make.
 5) Return only the top 3 project budgets in descending order.
 
+<START SOLUTIONS HERE>
+  
+Answer:
+
+1) SELECT ename, salary/12 FROM emp
+
+2) SELECT ename FROM emp WHERE supereno IS NULL
+
+3) SELECT ename FROM emp E JOIN workson W ON E.eno = W.eno WHERE ename LIKE '%S%' and resp LIKE '%ER'
+
+4) SELECT E.ename, M.salary - E.salary FROM emp as E JOIN emp as M ON E.supereno = M.eno WHERE E.salary < M.salary
+
+5) SELECT pno, budget FROM proj ORDER BY budget DESC LIMIT 3
+
+
+<END SOLUTIONS HERE>
+
+
+
 ### Try it: SQL SELECTSet Operations, ORDER BY
 **Question**: Write these queries:
 1) Return the list of employees sorted by salary (desc) and then title (asc).
@@ -426,6 +535,31 @@ Write these queries:
 3) Return the employees (names) who manage an employee but do not manage a department.
 4) Give a list of all employees who work on a project for the 'Management' department ordered by project number (asc).
 5) **Challenge**: Return the projects (names) that have their department manager working on them.
+
+<START SOLUTIONS HERE>
+  
+Answer:
+1) SELECT * FROM emp ORDER BY salary DESC, title ASC
+
+2) (SELECT ename FROM emp JOIN dept ON mgreno = eno)  
+UNION (SELECT M.ename FROM emp E JOIN emp M ON E.supereno = M.eno)  
+OR:  
+SELECT DISTINCT M.ename From emp M, emp E, dept D  
+WHERE M.eno = E.supereno OR M.eno = D.mgreno
+
+3) (SELECT M.ename FROM emp E JOIN emp M ON E.supereno = M.eno)
+EXCEPT (SELECT ename FROM emp JOIN dept ON mgreno = eno)
+
+4) SELECT proj.pno, ename FROM emp E JOIN workson W ON E.eno = W.eno JOIN proj P ON W.pno = P.pno JOIN dept D ON P.dno = D.dno WHERE D.dname = 'Management' ORDER BY P.pno;
+
+5) SELECT pname FROM workson W JOIN dept D ON W.eno = D.mgreno JOIN proj P P.pno = W.pno and P.dno = D.dno;
+
+Note that MySQL does not support INTERSECT or EXCEPT.  You need to use subqueries and EXISTS/NOT EXISTS to have this functionality.
+
+
+<END SOLUTIONS HERE>
+
+
 
 ### Conclusion
 The **SELECT** statement is used to query data and combines the operations of selection, projection, and join.  
