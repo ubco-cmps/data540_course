@@ -206,6 +206,16 @@ Terminology:
 3) What is the degree of the relation?  
 4) What is the domain of `resp`? What is the domain of `hours`?  
 
+<START SOLUTIONS HERE>
+  
+1) WorksOn  
+2) 9  
+3) 4  
+4) Domain of resp is a string.  Domain of hours is a number (integer).  
+
+<END SOLUTIONS HERE> 
+
+
 ### Database Definition Question
 
 **Question**:  
@@ -218,6 +228,16 @@ How many of the following statements are **TRUE**?
 6) A relation's cardinality is always bigger than its degree.  
 A)1 B)2 C)3 D)4 E)5
 
+<START SOLUTIONS HERE>
+  
+Answer: D  
+True statements:  
+1) A database is data.  
+2) A database system is software.  
+4) Usually, more than one user can use a database system at a time.  
+5) The cardinality is the number of rows in a relation.  
+
+<END SOLUTIONS HERE> 
 
 ### Database Definition Matching Question
 **Question**: Given the three definitions, select the ordering that contains their related definitions.  
@@ -230,6 +250,11 @@ B) row, column, table
 C) table, row, column  
 D) table, column, row  
 
+<START SOLUTIONS HERE>
+  
+Answer: C) table, row, column
+
+<END SOLUTIONS HERE> 
 
 ### Cardinality and Degree Question
 **Question**: A database table has 5rows and 10 columns. Select **one** true statement.
@@ -239,6 +264,11 @@ B) The table's cardinality is 5.
 C) The table's degree is 5.  
 D) The table's cardinality is 10.  
 
+<START SOLUTIONS HERE>
+  
+Answer: B (cardinality is the number of rows)
+
+<END SOLUTIONS HERE> 
 
 ### Relation Properties
 1) No two relations have the same name.  
@@ -272,17 +302,38 @@ A *foreign key* is a set of attributes in one relation referring to the primary 
 A) true  
 B) false  
 
+<START SOLUTIONS HERE>
+  
+Answer: A) true 
+A key is a minimal set of attributes that uniquely identifies a row in a table.  A superkey uniquely identifies a row but does not have to be minimal.  Thus, a key is always a superkey but not vice versa.
+
+<END SOLUTIONS HERE>
+
 ### Keys and Superkeys Question (2)
 **Question:**
 *True or false*:It is possible to have more than one key for a table and the keys may have different numbers of attributes.  
 A) true  
 B) false  
 
+<START SOLUTIONS HERE>
+  
+Answer:  A) true
+A good example is that students in the class could be identified by student id  and (first name, last name).  These are both keys, but the first one has one attribute and the second has two.
+
+<END SOLUTIONS HERE>
+
 ### Keys and Superkeys Question (3)
 **Question:**  
 *True or false*:It is possible to always determine if a field is a key by looking at the data in the table.  
 A) true  
 B) false  
+
+<START SOLUTIONS HERE>
+  
+Answer:  B) false  Keys are part of the schema not the data.
+
+<END SOLUTIONS HERE>
+
 
 ### Example Relational Data Questions
 
@@ -293,6 +344,18 @@ Questions:
 1) Is enamea key for emp?  
 2) Is enoa key for WorksOn?  
 3) List all the superkeys for WorksOn.  
+
+
+<START SOLUTIONS HERE>
+  
+1) Probably not.  According to what we are modeling we are not told that ename is a key and cannot assume that it is just because there are no two people with duplicate names in the current relation instance.
+
+2) No because there are two tuples with value the same value E7 for eno.  Also, we know from the project description that an employee can work on multiple projects, which means that for each project they work on there would be a tuple in the WorksOn relation.  Hence, duplicate values of eno is possible.
+
+3) Superkeys = {(eno,pno), (eno,pno,resp), (eno,pno,dur), (eno,pno,resp,dur) }
+
+<END SOLUTIONS HERE>
+
 
 <STAR SLIDE STARTS>
   
@@ -323,16 +386,34 @@ A) domain constraint
 B) referential integrity constraint  
 C) entity integrity constraint  
 
+<START SOLUTIONS HERE>
+  
+Answer: C
+
+<END SOLUTIONS HERE>
+
 
 ### Entity Integrity Constraint Question
 **Question**: A primary key has three fields. Only one field is null. Is the entity integrity constraint violated?  
 A) Yes  
-B) No  
+B) No 
+
+<START SOLUTIONS HERE>
+  
+Answer: A  (only one field has to be null, not all of them)
+
+<END SOLUTIONS HERE>
 
 ### Referential Integrity Constraint Question
 **Question**: A foreign key has a nullvalue in the tablethat contains the foreign key fields. Is the referential integrity constraint violated?  
 A) Yes  
 B) No  
+
+<START SOLUTIONS HERE>
+  
+Answer: B  Foreign key field can be null.  They just cannot contain a value that is not in the primary key.
+
+<END SOLUTIONS HERE>
 
 ### Integrity Questions
 <img src="../images/lecture1/emprelation.png" alt="emprelation" width="300" > <img src="../images/lecture1/workson.png" alt="workson" width="300" >
@@ -340,6 +421,25 @@ B) No
 
 Question: How many rows have violations of integrity constraints? Note: salary, budget, dur are number fields.  
 A) 8 B) 9 C) 10 D) 11 E) 12
+
+<START SOLUTIONS HERE>
+  
+Answer: B) 9  
+Emp violations:  
+- tuple 1 - salary = "AS" (domain)
+- tuple 6 - eno = null (entity integrity)  
+Proj violations:  
+- none
+WorksOn violations:  
+- tuple 1 - pno = "P0" (ri)
+- tuple 3 - eno = null (ei)
+- tuple 5 - eno = "E9" (ri)
+ tuple 7 - pno = null (ei)  
+ tuple 8 – E6 (ri)    
+tuple 9 – P6 (ri)  
+ tuple 11 - eno = null, pno = null (ei)  
+
+<END SOLUTIONS HERE>
 
 ### Relational Algebra Query Language
 A *query language* is used to update and retrieve data that is stored in a data model.
