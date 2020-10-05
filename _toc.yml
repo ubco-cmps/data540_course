@@ -5,25 +5,6 @@
   chapters:
     - file: about/course_schedule
 
-- part: Getting started!
-  chapters:
-    - file: getting-started/todo_list
-      title: Things to do before start of course
-    - file: class/install_ds_stack
-      expand_sections: true
-      sections:
-        - file: class/install_ds_stack_mac
-          title: ❖ macOS
-        - file: class/install_ds_stack_ubuntu
-          title: ❖ Ubuntu
-        - file: class/install_ds_stack_windows
-          title: ❖ Windows
-
-- part: Course Feedback
-  chapters:
-    - file: about/feedback
-      title: Anonymous Feedback Form
-
 - part: Lectures
   chapters:
     - file: class/Lecture1
@@ -52,6 +33,11 @@
       title: Lab 1 - DS Stack
     - file: labs/lab2
       title: Lab 2 - Introduction to Excel
+
+- part: Course Feedback
+  chapters:
+    - file: about/feedback
+      title: Anonymous Feedback Form
 
 # - part: Quiz Preparation
 #   chapters:

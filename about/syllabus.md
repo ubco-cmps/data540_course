@@ -87,10 +87,14 @@ Yes. To pass this course, you must:
 
 ## Course Learning Outcomes (AKA what will I learn in this course?)
 
-1. Install and setup a variety of software tools and programs used by data analysts
-2. Perform basic and advanced data analysis and visualization in Excel
-3. Able to setup IDEs and write small programs in Python and R
-4. Understand the pros and cons of each tool/software package and criteria to select the best tool for the job
+After completing this course, students will be able to:
+
+1. Explain the use case for databases and use relational databases and relational model terminology.
+2. Write SQL DDL including CREATE and DROP TABLE, INSERT, UPDATE, and DELETE statements.
+3. Perform SQL SELECT queries of moderate complexity including SELECT-FROM-WHERE, GROUP BY, ORDER BY, HAVING clauses and queries that contain subqueries, functions, and outer joins.
+4. Write code in Python and R that queries a relational database.
+5. Understand the components (entity, relationship, attribute) of an Entity-Relationship (ER) diagram in UML class diagram syntax in order to understand a database structure. Be able to convert an ER diagram into the relational model.
+6. Fluency with XML and JSON representation formats and querying using XPath.
 
 ```{tip}
 The full course schedule is available here: {ref}`page_Course_Schedule`
