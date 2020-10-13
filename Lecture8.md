@@ -4,7 +4,7 @@
 This class is cancelled due to the Remembrance Day holiday, but the materials are below for your information and reference. This lecture contains several important features but is not examinable on any quizzes.
 ```
 
-<iframe src="../data_540_view_security_lecture8.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
+<iframe src="data_540_view_security_lecture8.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
 
 ## Sli.do Polls
 
