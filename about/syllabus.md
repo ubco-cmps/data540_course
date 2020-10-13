@@ -60,7 +60,7 @@ Any major changes to the syllabus (this page) will be documented here as well as
 | Team Member (Preferred pronouns) | Role       | Pronounce as     | Contact | Office Hour |
 |----------------------------------|------------|------------------|---------|-------------|
 | Dr. Firas Moosvi (he/his/him)    | Instructor | Fur-az Moose-vee | Slack   | TBD         |
-| Debangsha Sarkar ()              | TA         |                  | Slack   | TBD         |
+| Brandon Graham-Knight            | TA         |                  | Slack   | TBD         |
 
 (grading_practices)=
 ## How will I be evaluated in this course?
@@ -69,8 +69,7 @@ The grading scheme for this course is here:
 
 | Item     | Weight        | Due date(s)        |
 |----------|---------------|--------------------|
-| Clickers | 10%           | Every class        |
-| Labs     | 40% (4 x 10%) | Wednesdays at 6 PM |
+| Labs     | 50% (4 x 12.5%) | Wednesdays at 6 PM |
 | Quiz 1   | 25%           | Sept 30, 2020      |
 | Quiz 2   | 25%           | Oct 7, 2020        |
 
