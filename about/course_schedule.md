@@ -5,7 +5,7 @@ Course Schedule
 | Class # | Date                         | Course Topics                                               | Lecture                                 |
 |---------|------------------------------|-------------------------------------------------------------|-----------------------------------------|
 | -       | <s>Monday October 12</s>     | CANCELLED due to Canadian Thanksgiving                      | N/A                                     |
-| 1       | Wednesday October 14         | Relational Databases (Lecture 1) and SQL DDL: CREATE, INSERT, DELETE, UPDATE (Lecture 2)    | Lecture 1 (live) & Lecture 2 (recorded) |
+| 1 & 2       | Wednesday October 14         | Relational Databases (Lecture 1) and SQL DDL: CREATE, INSERT, DELETE, UPDATE (Lecture 2)    | Lecture 1 (live) & Lecture 2 (recorded) |
 | 3       | Monday October 19            | SQL: select, project, join, ORDER BY                        | Lecture 3                               |
 | 4      | Wednesday October 21         | SQL: GROUP BY, aggregate functions, subqueries, outer joins | Lecture 4                               |
 | Q       | Monday October 26            | Quiz 1                                                      | Lecture 5                               |
