@@ -2,18 +2,18 @@
 Course Schedule
 =======================
 
-| Class # | Date                    | Course Topics                                               | Lecture                         |
-|---------|-------------------------|-------------------------------------------------------------|----------------------------------|
-| 1       | Monday October 12       | Relational Database Introduction                            | Lecture 1                        |
-| 2       | Wednesday October 14    | SQL DDL: CREATE, INSERT, DELETE, UPDATE                     | Lecture 2                        |
-| 3       | Monday October 19       | SQL: select, project, join, ORDER BY                        | Lecture 3                        |
-| 4       | Wednesday October 21    | SQL: GROUP BY, aggregate functions, subqueries, outer joins | Lecture 4                        |
-| 5       | Monday October 26       | Quiz 1                                                      | Lecture 5                        |
-| 6       | Wednesday October 28    | Programming with Databases in R and Python                  | Quiz                             |
-| 7       | Monday November 2       | ER/UML Diagrams with Relational Mapping                     | Lecture 6                        |
-| 8       | Wednesday November 4    | XML, JSON, and NoSQL                                        | Lecture 7                        |
-| 9       | Monday November 9       | Quiz 2                                                      | Quiz                             |
-| 10      | <s>Wednesday November 11</s> | <s>Advanced SQL: Views, Security, Transactions</s>               | CANCELLED due to Remembrance Day |
+| Class # | Date                         | Course Topics                                               | Lecture                                 |
+|---------|------------------------------|-------------------------------------------------------------|-----------------------------------------|
+| -       | <s>Monday October 12</s>     | CANCELLED due to Canadian Thanksgiving                      | N/A                                     |
+| 1       | Wednesday October 14         | Relational Databases (Lecture 1) and SQL DDL: CREATE, INSERT, DELETE, UPDATE (Lecture 2)    | Lecture 1 (live) & Lecture 2 (recorded) |
+| 3       | Monday October 19            | SQL: select, project, join, ORDER BY                        | Lecture 3                               |
+| 4      | Wednesday October 21         | SQL: GROUP BY, aggregate functions, subqueries, outer joins | Lecture 4                               |
+| Q       | Monday October 26            | Quiz 1                                                      | Lecture 5                               |
+| 5       | Wednesday October 28         | Programming with Databases in R and Python                  | Quiz                                    |
+| 6       | Monday November 2            | ER/UML Diagrams with Relational Mapping                     | Lecture 6                               |
+| 7       | Wednesday November 4         | XML, JSON, and NoSQL                                        | Lecture 7                               |
+| Q       | Monday November 9            | Quiz 2                                                      | Quiz                                    |
+| -       | <s>Wednesday November 11</s> | <s>Advanced SQL: Views, Security, Transactions</s>          | CANCELLED due to Remembrance Day        |
 
 ## Lecture Learning Objectives
 
