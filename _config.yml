@@ -3,7 +3,7 @@ title: DATA 540
 author: Firas Moosvi
 logo: images/logo.jpg
 copyright: ""
-exclude_patterns: ["LICENSE.md", "README.md"]
+exclude_patterns: ["LICENSE.md", "README.md","instructor_files/*"]
 
 latex:
   latex_documents:
