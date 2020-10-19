@@ -69,9 +69,9 @@ The grading scheme for this course is here:
 
 | Item     | Weight        | Due date(s)        |
 |----------|---------------|--------------------|
-| Labs     | 50% (4 x 12.5%) | Wednesdays at 6 PM |
-| Quiz 1   | 25%           | Sept 30, 2020      |
-| Quiz 2   | 25%           | Oct 7, 2020        |
+| Labs     | 50% (4 x 12.5%) | Thursdays at 6 PM |
+| Quiz 1   | 25%           | Monday Oct 26, 2020      |
+| Quiz 2   | 25%           | Monday Nov 9, 2020        |
 
 ```{attention} 
 All deadlines in this course (except Quizzes) have an automatic 48 hour grace period after the due dates listed above.
