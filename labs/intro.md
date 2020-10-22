@@ -9,7 +9,7 @@ Once the lab is ready for you to accept, click the below to accept the lab:
 | Lab                                   | Due Date                   | Link to Accept |
 |---------------------------------------|----------------------------|----------------|
 | Lab 1 - SQL DDL                       | Thurs October 22 at 18:00  | [Accept Lab](https://classroom.github.com/a/eJliYfbk) |
-| Lab 2 - SQL II                        | Thurs October 29 at 18:00  | [Accept Lab]() |
+| Lab 2 - SQL II                        | Thurs October 29 at 18:00  | [Accept Lab](ttps://classroom.github.com/a/ulM70TSM) |
 | Lab 3 - Database Programming          | Thurs November 5 at 18:00  | [Accept Lab]() |
 | Lab 4 - ER Diagrams, XML, JSON, NoSQL | Thurs November 12 at 18:00 | [Accept Lab]() |
 

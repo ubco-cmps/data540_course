@@ -8,8 +8,8 @@ Course Schedule
 | 1 & 2       | Wednesday October 14         | Relational Databases (Lecture 1) and SQL DDL: CREATE, INSERT, DELETE, UPDATE (Lecture 2)    | Lecture 1 (live) & Lecture 2 (recorded) |
 | 3       | Monday October 19            | SQL: select, project, join, ORDER BY                        | Lecture 3                               |
 | 4      | Wednesday October 21         | SQL: GROUP BY, aggregate functions, subqueries, outer joins | Lecture 4                               |
-| Q       | Monday October 26            | Quiz 1                                                      | Lecture 5                               |
-| 5       | Wednesday October 28         | Programming with Databases in R and Python                  | Quiz                                    |
+| Q       | Monday October 26            | Quiz 1                                                      | Quiz (only on Lectures 1,2,3)                                |
+| 5       | Wednesday October 28         | Programming with Databases in R and Python                  | Lecture 5                                    |
 | 6       | Monday November 2            | ER/UML Diagrams with Relational Mapping                     | Lecture 6                               |
 | 7       | Wednesday November 4         | XML, JSON, and NoSQL                                        | Lecture 7                               |
 | Q       | Monday November 9            | Quiz 2                                                      | Quiz                                    |
