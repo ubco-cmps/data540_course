@@ -28,6 +28,7 @@
   chapters:
     - file: labs/intro
       title: Start here!
+    - file: labs/lab2_solutions
 
 - part: Course Feedback
   chapters:
