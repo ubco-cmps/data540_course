@@ -14,10 +14,10 @@ html:
   use_issues_button: true
   use_edit_page_button: true
   navbar_number_sections : false
-  baseurl : "https://firas.moosvi.com/courses/data540/"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  baseurl : "https://firas.moosvi.com/courses/2021_WT1/data540/"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   # google_analytics_id: UA-11111111 # add your Google Analytics Tracking Code
   comments:
-    hypothesis: true
+    hypothesis: false
     utterances:
       repo: "ubco-cmps/data540_course"
   extra_footer : |
@@ -40,6 +40,44 @@ sphinx:
   config:
     html_show_copyright: false
     html_extra_path: ['files']
-
-parse:
-  myst_extended_syntax: true
+    bibtex_reference_style: author_year
+    myst_enable_extensions: 
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_image
+    - linkify
+    - substitution
+    myst_substitutions:
+      INSTRUCTOR: "Dr. Firas Moosvi (he/his/him)"
+      TA: "Amanat"
+      PRONOUNCE: "[Fur-az Moose-vee](https://namedrop.io/firasmoosvi)"
+      OFFICE: "SCI 393"
+      PHONE: "N/A"
+      COURSE_CODE: "DATA 540"
+      SECTION: "001"
+      CREDITS: "1"
+      TITLE: "Databases and Data Retrieval"
+      PREREQS: "N/A"
+      COREQS: "N/A"
+      TERM: "2021 Winter Term 1"
+      ROOM: "In-person, and live-streamed onZoom"
+      MEETING_TIMES: "Tuesday, Thursdar from 11:00 - 12:30 PM"
+      LAB_TIMES: "Mondays 13:30 - 15:30 PM"
+      GRACE_PERIOD: "48 hour"
+      # W_DATE_1: "11:59 PDT on September 20, 2021"
+      # W_DATE_2: "11:59 PDT on November 12, 2021"
+      # W_DATE_3: "November 12, 2021"
+      # EXAM_PERIOD: "Saturday December 11th - Wednesday, December 22"
+      CANVAS_ID: "81870"
+      CANVAS_LINK: "https://canvas.ubc.ca/courses/CANVAS_ID" # {{ '[course website]({link})'.format(link=CANVAS_LINK.replace('CANVAS_ID',CANVAS_ID)) }}
+      ZOOM_LINK: "[Zoom](https://canvas.ubc.ca/courses/CANVAS_ID/external_tools/15408)"
+      ANNOUNCEMENTS_LINK: "[Announcements](https://canvas.ubc.ca/courses/CANVAS_ID/announcements)"
+      COURSE_LINK: "https://firas.moosvi.com/courses/2021_WT1/data540"
+      FORUM_LINK: "Slack"
+      FORUM_LINK: "[Slack](https://join.slack.com/t/ubcomds2021/shared_invite/zt-vdpj5z3q-Yo5FFNfW7fOXGHh7Ib4pNg)"
+      ANALYTICS_OPTOUT: "[complete this form](https://ubc.ca1.qualtrics.com/jfe/form/SV_0p6lP4TtNpJn410)"
+      FORMAT: "Lectures and Labs will be running in-person in this course."
+      ASSOCIATE_HEAD: "Jeff Andrews [jeff.andrews@ubc.ca](mailto:jeff.andrews@ubc.ca) or Khalad Hasan [khalad.hasan@ubc.ca](mailto:khalad.hasan@ubc.ca)"
+      ANON_FEEDBACK: "[feedback form](https://ubc.ca1.qualtrics.com/jfe/form/SV_b9g4ysZaap6Udbn)"

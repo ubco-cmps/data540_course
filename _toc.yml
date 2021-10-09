@@ -1,34 +1,37 @@
-- file: about/syllabus
-  expand_sections: true
-
-- part: About this course
+format: jb-book
+root: about/unsyllabus
+parts:
+- caption: About this course
   chapters:
-    - file: about/course_schedule
+  - file: about/syllabus 
+  - file: about/syllabus_bits/course_schedule
+    title: Course Schedule and Learning Outcomes
+  - file: about/accommodations
 
-- part: Lectures
+- caption: Lectures
   chapters:
-    - file: Lecture1
-      title: Lecture 1
-    - file: Lecture2
-      title: Lecture 2
-    - file: Lecture3
-      title: Lecture 3
-    - file: Lecture4
-      title: Lecture 4
-    - file: Lecture5
-      title: Lecture 5
-    - file: Lecture6
-      title: Lecture 6
-    - file: Lecture7
-      title: Lecture 7
-    - file: Lecture8
-      title: Lecture 8
+  - file: class/Class1
+    title: Class 1
+  - file: class/Class2
+    title: Class 2
+  - file: class/Class3
+    title: Class 3
+  - file: class/Class4
+    title: Class 4
+  - file: class/Class5
+    title: Class 5
+  - file: class/Class6
+    title: Class 6
+  - file: class/Class7
+    title: Class 7
+  - file: class/Class8
+    title: Class 8
 
-- part: Labs
+- caption: Labs
   chapters:
     - file: labs/intro
       title: Start here!
-    - file: labs/lab2_solutions
+    # - file: labs/lab2_solutions
 
 - part: Course Feedback
   chapters:
