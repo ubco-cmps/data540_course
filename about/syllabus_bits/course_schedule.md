@@ -19,15 +19,19 @@ Course Schedule
 
 | Assignment | Date Due                 |
 |------------|--------------------------|
-| Lab 1      | Monday October 13 18:00  |
-| Lab 2      | Monday October 20 18:00  |
+| Lab 1      | Monday October 18 18:00  |
+| Lab 2      | Monday October 25 18:00  |
 | Quiz 1     | Tuesday October 26       |
-| Lab 3      | Monday October 27 18:00  |
+| Lab 3      | Monday November 1 18:00  |
 | Lab 4      | Monday November 8  18:00 |
 | Quiz 2     | Thursday November 9      |
 
 ```{note}
 Data 540 Labs are **in-person** on Mondays from 1:30 - 3:30 PM.
+```
+
+```{tip}
+All lab deadlines have a 48-hour no-penalty grace period.
 ```
 
 ## Lecture Learning Objectives
