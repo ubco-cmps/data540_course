@@ -15,8 +15,19 @@ Course Schedule
 | Q       | Tuesday November 9          | Quiz 2                                                                          |
 | -       | <s>Thursday November 11</s> | <s>Advanced SQL: Views, Security, Transactions</s>  (Not Tested, Extra Content) |
 
+## Important Due Dates
+
+| Assignment | Date Due                 |
+|------------|--------------------------|
+| Lab 1      | Monday October 13 18:00  |
+| Lab 2      | Monday October 20 18:00  |
+| Quiz 1     | Tuesday October 26       |
+| Lab 3      | Monday October 27 18:00  |
+| Lab 4      | Monday November 8  18:00 |
+| Quiz 2     | Thursday November 9      |
+
 ```{note}
-Data 540 Labs are **in-person** on Tuesdays from 1:30 - 3:30 PM.
+Data 540 Labs are **in-person** on Mondays from 1:30 - 3:30 PM.
 ```
 
 ## Lecture Learning Objectives
