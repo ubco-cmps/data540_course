@@ -1,10 +1,12 @@
 # Lecture 8 - Advanced SQL: Views, Security, Transactions
 
 ```{tip}
-This class is cancelled due to the Remembrance Day holiday, but the materials are below for your information and reference. This lecture contains several important features but is not examinable on any quizzes. I have also included three videos from Dr. Ramon Lawrence on the key topics: Views, Security, Transactions.
+This class is cancelled due to the Remembrance Day holiday, but the materials are below for your information and reference.
+This lecture contains several important features but is not examinable on any quizzes. 
+I have also included three videos from Dr. Ramon Lawrence on the key topics: Views, Security, Transactions.
 ```
 
-<iframe src="data_540_view_security_lecture8.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
+<iframe src="../data_540_view_security_lecture8.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
 
 ## Views
 
