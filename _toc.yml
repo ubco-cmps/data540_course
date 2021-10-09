@@ -10,21 +10,21 @@ parts:
 
 - caption: Lectures
   chapters:
-  - file: class/Class1
+  - file: class/Lecture1
     title: Class 1
-  - file: class/Class2
+  - file: class/Lecture2
     title: Class 2
-  - file: class/Class3
+  - file: class/Lecture3
     title: Class 3
-  - file: class/Class4
+  - file: class/Lecture4
     title: Class 4
-  - file: class/Class5
+  - file: class/Lecture5
     title: Class 5
-  - file: class/Class6
+  - file: class/Lecture6
     title: Class 6
-  - file: class/Class7
+  - file: class/Lecture7
     title: Class 7
-  - file: class/Class8
+  - file: class/Lecture8
     title: Class 8
 
 - caption: Labs
