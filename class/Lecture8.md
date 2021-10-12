@@ -6,7 +6,7 @@ This lecture contains several important features but is not examinable on any qu
 I have also included three videos from Dr. Ramon Lawrence on the key topics: Views, Security, Transactions.
 ```
 
-<iframe src="../data_540_view_security_lecture8.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
+<iframe src="../data_540_lecture8_view_security.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
 
 ## Views
 

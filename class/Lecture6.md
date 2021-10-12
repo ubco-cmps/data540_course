@@ -4,4 +4,4 @@
 This lecture will be a recorded video.
 ```
 
-<iframe src="../data_540_dbdesign_lecture6.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
+<iframe src="../data_540_lecture6_dbdesign.pdf" width="100%" height="800px" frameBorder="0"> </iframe>
