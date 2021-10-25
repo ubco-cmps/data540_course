@@ -6,14 +6,16 @@ Course Schedule
 |---------|-----------------------------|---------------------------------------------------------------------------------|
 | 1       | Tuesday October 12          | Relational Databases                                                            |
 | 2       | Thursday October 14         | SQL DDL: CREATE, INSERT, DELETE, UPDATE (Lecture 2)                             |
-| 3       | Tuesday October 19          | SQL: select, project, join, ORDER BY                                            |
-| 4       | Thursday October 21         | SQL: GROUP BY, aggregate functions, subqueries, outer joins                     |
-| Q       | Tuesday October 26          | Quiz 1                                                                          |
-| 5       | Thursday October 28         | Programming with Databases in R and Python                                      |
-| 6       | Tuesday November 2          | ER/UML Diagrams with Relational Mapping                                         |
-| 7       | Thursday November 4         | XML, JSON, and NoSQL                                                            |
+| 3       | Tuesday October 19          | Docker Tutorial                                                                 |
+| 4       | Thursday October 21         | SQL: select, project, join, ORDER BY joins                                      |
+| Q       | Tuesday October 26          | Quiz 1 (NO CLASS TODAY)                                                         |
+| 5       | Thursday October 28         | SQL: GROUP BY, aggregate functions, subqueries, outer                           |
+| 6       | Tuesday November 2          | Programming with Databases in R and Python Mapping                              |
+| 7       | Thursday November 4         | Live (XML, JSON, and NoSQL) AND Video (ER/UML Diagrams with Relational)         |
 | Q       | Tuesday November 9          | Quiz 2                                                                          |
 | -       | <s>Thursday November 11</s> | <s>Advanced SQL: Views, Security, Transactions</s>  (Not Tested, Extra Content) |
+
+
 
 ## Important Due Dates
 
